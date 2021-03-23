@@ -1,7 +1,7 @@
 'use strict';
 
-import togglePopUp from './modules/togglePopUp';
+import toggleModal from './modules/toggleModal';
   
-  // popup
-  togglePopUp();
+  // modal
+  toggleModal();
   
