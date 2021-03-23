@@ -49,7 +49,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar toggleModal = function toggleModal() {\n  var btnModal = document.querySelectorAll('.callback-btn'),\n      modal = document.querySelector('.modal-callback'),\n      modalOverlay = document.querySelector('.modal-overlay'),\n      modalClose = document.querySelector('.modal-close');\n  btnModal.forEach(function (item) {\n    item.addEventListener('click', function (event) {\n      event.preventDefault();\n      modal.style.display = 'block';\n      modalOverlay.style.display = 'block';\n      document.body.style.overflow = 'hidden';\n    });\n  });\n  modalClose.addEventListener('click', function () {\n    modal.style.display = 'none';\n    modalOverlay.style.display = 'none';\n    document.body.style.overflow = '';\n  });\n  modalOverlay.addEventListener('click', function () {\n    modal.style.display = 'none';\n    modalOverlay.style.display = 'none';\n    document.body.style.overflow = '';\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toggleModal);\n\n//# sourceURL=webpack://thesisProject_JS/./src/modules/toggleModal.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar toggleModal = function toggleModal() {\n  var btnModal = document.querySelectorAll('.callback-btn'),\n      btnServices = document.querySelector('.button-services'),\n      modal = document.querySelector('.modal-callback'),\n      modalOverlay = document.querySelector('.modal-overlay'),\n      modalClose = document.querySelector('.modal-close');\n\n  var openModal = function openModal() {\n    modal.style.display = 'block';\n    modalOverlay.style.display = 'block';\n    document.body.style.overflow = 'hidden';\n  };\n\n  var closeModal = function closeModal() {\n    modal.style.display = 'none';\n    modalOverlay.style.display = 'none';\n    document.body.style.overflow = '';\n  };\n\n  btnModal.forEach(function (item) {\n    item.addEventListener('click', function (event) {\n      event.preventDefault();\n      openModal();\n    });\n  });\n  btnServices.addEventListener('click', function (event) {\n    event.preventDefault();\n    openModal();\n  });\n  modalClose.addEventListener('click', function () {\n    closeModal();\n  });\n  modalOverlay.addEventListener('click', function () {\n    closeModal();\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toggleModal);\n\n//# sourceURL=webpack://thesisProject_JS/./src/modules/toggleModal.js?");
 
 /***/ }),
 
@@ -451,7 +451,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("b9d7b435a4619fc6c7be")
+/******/ 		__webpack_require__.h = () => ("858baba5a0a664f206f1")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
