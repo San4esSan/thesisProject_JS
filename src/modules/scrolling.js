@@ -1,5 +1,6 @@
 const scrolling = () => {
-  const up = document.querySelector('.up');
+  const up = document.querySelector('.up'),
+    anchors = document.querySelectorAll('.top-menu a[href*="#"]');
   let scrolled;
   let timer;
 
@@ -29,6 +30,18 @@ const scrolling = () => {
       up.classList.remove('fadeIn');
     }
   });
+
+  anchors.forEach(elem => {
+    if(anchors) {
+      elem.addEventListener('click', function(event) {
+        event.preventDefault();
+        let anchorsId = this.getAttribute('href');
+        document.querySelector(anchorsId).scrollIntoView({
+          behavior: 'smooth', block: 'start'
+        });
+      });
+    }
+  })
 
 };
 

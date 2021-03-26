@@ -60,7 +60,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar scrolling = function scrolling() {\n  var up = document.querySelector('.up');\n  var scrolled;\n  var timer;\n  up.addEventListener('click', function () {\n    scrolled = window.pageYOffset;\n    scrollToTop();\n  });\n\n  function scrollToTop() {\n    if (scrolled > 0) {\n      window.scrollTo(0, scrolled);\n      scrolled = scrolled - 100;\n      timer = setTimeout(scrollToTop, 10);\n    } else {\n      clearTimeout(timer);\n      window.scrollTo(0, 0);\n    }\n  }\n\n  window.addEventListener('scroll', function () {\n    if (document.documentElement.scrollTop > 500) {\n      up.style.display = 'block';\n      up.classList.add('animated', 'fadeIn');\n      up.classList.remove('fadeOut');\n    } else {\n      up.classList.add('fadeOut');\n      up.classList.remove('fadeIn');\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrolling);\n\n//# sourceURL=webpack://thesisProject_JS/./src/modules/scrolling.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar scrolling = function scrolling() {\n  var up = document.querySelector('.up'),\n      anchors = document.querySelectorAll('.top-menu a[href*=\"#\"]');\n  var scrolled;\n  var timer;\n  up.addEventListener('click', function () {\n    scrolled = window.pageYOffset;\n    scrollToTop();\n  });\n\n  function scrollToTop() {\n    if (scrolled > 0) {\n      window.scrollTo(0, scrolled);\n      scrolled = scrolled - 100;\n      timer = setTimeout(scrollToTop, 10);\n    } else {\n      clearTimeout(timer);\n      window.scrollTo(0, 0);\n    }\n  }\n\n  window.addEventListener('scroll', function () {\n    if (document.documentElement.scrollTop > 500) {\n      up.style.display = 'block';\n      up.classList.add('animated', 'fadeIn');\n      up.classList.remove('fadeOut');\n    } else {\n      up.classList.add('fadeOut');\n      up.classList.remove('fadeIn');\n    }\n  });\n  anchors.forEach(function (elem) {\n    if (anchors) {\n      elem.addEventListener('click', function (event) {\n        event.preventDefault();\n        var anchorsId = this.getAttribute('href');\n        document.querySelector(anchorsId).scrollIntoView({\n          behavior: 'smooth',\n          block: 'start'\n        });\n      });\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrolling);\n\n//# sourceURL=webpack://thesisProject_JS/./src/modules/scrolling.js?");
 
 /***/ }),
 
@@ -473,7 +473,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("106e70c38517c41ef772")
+/******/ 		__webpack_require__.h = () => ("30167dac2c64b4381c5b")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
