@@ -38,7 +38,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_toggleModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/toggleModal */ \"./src/modules/toggleModal.js\");\n/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/accordeon */ \"./src/modules/accordeon.js\");\n/* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/scrolling */ \"./src/modules/scrolling.js\");\n\n\n\n\n\n(0,_modules_toggleModal__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_accordeon__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_scrolling__WEBPACK_IMPORTED_MODULE_2__.default)();\n\n//# sourceURL=webpack://thesisProject_JS/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_toggleModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/toggleModal */ \"./src/modules/toggleModal.js\");\n/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/accordeon */ \"./src/modules/accordeon.js\");\n/* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/scrolling */ \"./src/modules/scrolling.js\");\n/* harmony import */ var _modules_topSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/topSlider */ \"./src/modules/topSlider.js\");\n\n\n\n\n\n\n(0,_modules_toggleModal__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_accordeon__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_scrolling__WEBPACK_IMPORTED_MODULE_2__.default)();\n(0,_modules_topSlider__WEBPACK_IMPORTED_MODULE_3__.default)();\n\n//# sourceURL=webpack://thesisProject_JS/./src/index.js?");
 
 /***/ }),
 
@@ -72,6 +72,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar toggleModal = function toggleModal() {\n  var btnModal = document.querySelectorAll('.callback-btn'),\n      btnServices = document.querySelector('.button-services'),\n      modal = document.querySelector('.modal-callback'),\n      modalOverlay = document.querySelector('.modal-overlay'),\n      modalClose = document.querySelector('.modal-close');\n\n  var openModal = function openModal() {\n    modal.style.display = 'block';\n    modalOverlay.style.display = 'block';\n    document.body.style.overflow = 'hidden';\n  };\n\n  var closeModal = function closeModal() {\n    modal.style.display = 'none';\n    modalOverlay.style.display = 'none';\n    document.body.style.overflow = '';\n  };\n\n  btnModal.forEach(function (item) {\n    item.addEventListener('click', function (event) {\n      event.preventDefault();\n      openModal();\n    });\n  });\n  btnServices.addEventListener('click', function (event) {\n    event.preventDefault();\n    openModal();\n  });\n  modalClose.addEventListener('click', function () {\n    closeModal();\n  });\n  modalOverlay.addEventListener('click', function () {\n    closeModal();\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toggleModal);\n\n//# sourceURL=webpack://thesisProject_JS/./src/modules/toggleModal.js?");
+
+/***/ }),
+
+/***/ "./src/modules/topSlider.js":
+/*!**********************************!*\
+  !*** ./src/modules/topSlider.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar topSlider = function topSlider() {\n  var itemSlide = document.querySelectorAll('.item');\n  var slideIndex = 1;\n\n  var showSlides = function showSlides(n) {\n    if (n > itemSlide.length) {\n      slideIndex = 1;\n    }\n\n    if (n < 1) {\n      slideIndex = itemSlide.length;\n    }\n\n    itemSlide.forEach(function (item) {\n      item.classList.add('animated');\n      item.style.display = 'none';\n    });\n    itemSlide[slideIndex - 1].style.display = 'block';\n  };\n\n  showSlides(slideIndex);\n\n  function plusSlides(n) {\n    showSlides(slideIndex += n);\n  }\n\n  setInterval(function () {\n    plusSlides(1);\n    itemSlide[slideIndex - 1].classList.remove('fadeIn');\n    itemSlide[slideIndex - 1].classList.add('fadeIn');\n  }, 3000);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (topSlider);\n\n//# sourceURL=webpack://thesisProject_JS/./src/modules/topSlider.js?");
 
 /***/ }),
 
@@ -473,7 +484,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("30167dac2c64b4381c5b")
+/******/ 		__webpack_require__.h = () => ("fd126b37edaf55aa24b3")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
