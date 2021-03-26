@@ -38,7 +38,18 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_toggleModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/toggleModal */ \"./src/modules/toggleModal.js\");\n\n\n // modal\n\n(0,_modules_toggleModal__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n//# sourceURL=webpack://thesisProject_JS/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_toggleModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/toggleModal */ \"./src/modules/toggleModal.js\");\n/* harmony import */ var _modules_accordeon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/accordeon */ \"./src/modules/accordeon.js\");\n\n\n\n\n(0,_modules_toggleModal__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_accordeon__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://thesisProject_JS/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/accordeon.js":
+/*!**********************************!*\
+  !*** ./src/modules/accordeon.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar accordeon = function accordeon() {\n  var element = document.querySelectorAll('.element');\n  element.forEach(function (elem) {\n    elem.classList.remove('active');\n  });\n  element.forEach(function (item) {\n    item.addEventListener('click', function (event) {\n      event.preventDefault();\n\n      if (item.classList.contains('active')) {\n        item.classList.remove('active');\n      } else {\n        element.forEach(function (elem) {\n          elem.classList.remove('active');\n        });\n        item.classList.add('active');\n      }\n    });\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (accordeon);\n\n//# sourceURL=webpack://thesisProject_JS/./src/modules/accordeon.js?");
 
 /***/ }),
 
@@ -451,7 +462,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("858baba5a0a664f206f1")
+/******/ 		__webpack_require__.h = () => ("2edd1d30e07b0d963d13")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
