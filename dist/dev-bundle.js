@@ -82,7 +82,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar topSlider = function topSlider() {\n  var itemSlide = document.querySelectorAll('.item');\n  var slideIndex = 1;\n\n  var showSlides = function showSlides(n) {\n    if (n > itemSlide.length) {\n      slideIndex = 1;\n    }\n\n    if (n < 1) {\n      slideIndex = itemSlide.length;\n    }\n\n    itemSlide.forEach(function (item) {\n      item.classList.add('animated');\n      item.style.display = 'none';\n    });\n    itemSlide[slideIndex - 1].style.display = 'block';\n  };\n\n  showSlides(slideIndex);\n\n  function plusSlides(n) {\n    showSlides(slideIndex += n);\n  }\n\n  setInterval(function () {\n    plusSlides(1);\n    itemSlide[slideIndex - 1].classList.remove('fadeIn');\n    itemSlide[slideIndex - 1].classList.add('fadeIn');\n  }, 3000);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (topSlider);\n\n//# sourceURL=webpack://thesisProject_JS/./src/modules/topSlider.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar topSlider = function topSlider() {\n  var itemSlide = document.querySelectorAll('.item'),\n      table = document.querySelectorAll('.table');\n  var slideIndex = 1;\n\n  var showSlides = function showSlides(n) {\n    if (n > itemSlide.length) {\n      slideIndex = 1;\n    }\n\n    if (n < 1) {\n      slideIndex = itemSlide.length;\n    }\n\n    itemSlide.forEach(function (item) {\n      item.classList.add('animated');\n      item.style.display = 'none';\n    });\n    itemSlide[slideIndex - 1].style.display = 'block';\n    table.forEach(function (item) {\n      item.classList.remove('active');\n    });\n  };\n\n  showSlides(slideIndex);\n\n  function plusSlides(n) {\n    showSlides(slideIndex += n);\n  }\n\n  setInterval(function () {\n    plusSlides(1);\n    itemSlide[slideIndex - 1].classList.remove('fadeIn');\n    itemSlide[slideIndex - 1].classList.add('fadeIn');\n  }, 3000);\n  setInterval(function () {\n    table[slideIndex - 1].classList.add('active');\n  }, 3050);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (topSlider);\n\n//# sourceURL=webpack://thesisProject_JS/./src/modules/topSlider.js?");
 
 /***/ }),
 
@@ -484,7 +484,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("1b6be8660a008b24dbb8")
+/******/ 		__webpack_require__.h = () => ("9f4c3791ae8596f7d604")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
