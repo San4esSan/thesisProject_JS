@@ -1,5 +1,3 @@
-// import toggleModal from './toggleModal';
-
 const servicesCarousel = () => {
 
   class SliderCarousel{
@@ -110,7 +108,7 @@ const servicesCarousel = () => {
     next: '.arrow-right',
     slidesToShow: 3
   });
-  
+
   carousel.init();
 
 };

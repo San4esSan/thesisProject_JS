@@ -19,9 +19,9 @@ const toggleModal = () => {
   };
 
   elemCart.addEventListener('click', (event) => {
+    event.preventDefault();
     let target = event.target.closest('.element');
     if(target.classList.contains('element')){
-      console.log('target: ', target);
       openModal();
     }
   });

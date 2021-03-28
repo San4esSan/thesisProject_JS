@@ -1,5 +1,6 @@
 const accordeon = () => {
-  const element = document.querySelectorAll('.element');
+  const element = document.querySelectorAll('.accordeon .element');
+  // const element = document.querySelector('.accordeon');
 
   element.forEach(elem => {
     elem.classList.remove('active');
@@ -18,6 +19,26 @@ const accordeon = () => {
       }
     });
   });
+
+
+    // element.addEventListener('click', (event) => {
+    //   event.preventDefault();
+
+    //   let target = event.target.closest('.element');
+    //   console.log('target: ', target);
+    //   if(target.classList.contains('active')){
+    //     target.classList.remove('active');
+    //   } else {
+    //     if (!target.classList.contains('active')){
+    //       target.classList.remove('active');
+    //     }
+    //     target.classList.add('active');
+    //   }
+      
+
+    // });
+
+
 };
 
 export default accordeon;
