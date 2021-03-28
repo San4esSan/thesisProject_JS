@@ -25,8 +25,13 @@ const sendForm = () => {
         }
       });
     };
-      
-    postData(formData)
+
+    let body = {};
+    formData.forEach((val, key) =>{
+      body[key] = val;
+    });        
+    postData(body)
+    // postData(formData)
     .then((response) => {
       event.preventDefault();
       if(response.status !==200){
@@ -46,14 +51,14 @@ const sendForm = () => {
 
   });
 
-  const postData = (formData) => {
+  const postData = (body) => {
     return fetch('./server.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'aplication/json'
       },
-      // body: JSON.stringify(body)
-      body: formData
+      body: JSON.stringify(body)
+      // body: formData
     });
   };   
 };
