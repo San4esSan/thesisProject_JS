@@ -33,11 +33,9 @@ const topSlider = () => {
       plusSlides(1);
       itemSlide[slideIndex - 1].classList.remove('fadeIn');
       itemSlide[slideIndex - 1].classList.add('fadeIn');
-    }, 3000);
-
-    setInterval(function() {
-      table[slideIndex-1].classList.add('active');
-    }, 3050);
+      setTimeout(() => table[slideIndex-1].classList.add('active'), 10);
+      setTimeout(() => table[slideIndex-1].classList.remove('active'), 2550);
+    }, 4000);
 
 };
 
