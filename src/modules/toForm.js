@@ -23,21 +23,48 @@ const toForm = () => {
 
     switch (elem.name) {      
       case 'fio':
-        elem.value = toTitleCase(elem.value);
-        elem.value = toString(elem.value);
+        if(elem.value.length > 2){
+          elem.value = toTitleCase(elem.value);
+          console.log('elem.value: ', elem.value.length);
+          elem.value = toString(elem.value);
+          elem.style.border = 'none';
+        } else {
+          elem.value = '';
+          elem.style = 'border: 5px solid red;';
+          if (elem.nextElementSibling && elem.nextElementSibling.classList.contains('validator-error')){
+            return;
+          }
+          const errorDiv = document.createElement('div');
+          errorDiv.textContent = 'Имя должно быть не менее 3 символов';
+          errorDiv.classList.add('validator-error');
+          elem.insertAdjacentElement('afterend', errorDiv);
+        }
       break;
       case 'tel':
-        elem.value = toString(elem.value);
+        if(elem.value.length > 6 && elem.value.length < 14){
+          elem.value = toString(elem.value);
+          elem.style.border = 'none';
+        } else {
+          elem.value = '';
+          elem.style = 'border: 5px solid red;';
+          if (elem.nextElementSibling && elem.nextElementSibling.classList.contains('validator-error')){
+            return;
+          }
+          const errorDiv = document.createElement('div');
+          errorDiv.textContent = 'Телефон должен быть от 7 до 13 символов';
+          errorDiv.classList.add('validator-error');
+          elem.insertAdjacentElement('afterend', errorDiv);
+        }
       break;
     }
   };
 
   const inputRestriction = (elem) => {
     if(elem.name === 'fio'){
-      elem.value = elem.value.replace(/[^а-я]{2,}$/ig, '');      
+      elem.value = elem.value.replace(/[^а-я]/ig, '');      
     }
     if(elem.name === 'tel'){
-      elem.value = elem.value.replace(/(?!^[+])[^0-9.]{,13}$/, '');
+      elem.value = elem.value.replace(/(?!^[+])[^0-9.]/, '');
     }
   };
 
@@ -66,44 +93,27 @@ const toForm = () => {
     }
   }
 
+  const applyStyle = () => {
+    const style = document.createElement('style');
+    style.textContent = `
+      input.success {
+        border: 2px solid green;
+        margin-bottom: 0
+      }
+      input.error {
+        border: 2px solid red;
+        margin-bottom: 0
+      }
+      .validator-error {
+        font-size: 12px;
+        font-family: sans-serif;
+        color: red
+      }
+    `;
+    document.head.appendChild(style);
+  };
+  applyStyle();
   
-  // const validateElem = (elem) => {
-  //   if(elem.name === 'fio'){
-  //     console.log(elem);
-  //   }
-  //   if(elem.name === 'tel'){
-  //     console.log(elem);
-  //   }
-  // };
-
-  // for(let elem of form.elements) {
-  //   if(!elem.classList.contains('button')){
-  //     elem.addEventListener('blur', () => {
-  //       validateElem(elem);
-  //     });  
-  //   }
-  // }
-
-  // form.addEventListener('submit', (event) => {
-  //   event.preventDefault();
-
-  //   for(let elem of form.elements) {
-  //     if(!elem.classList.contains('button')){
-  //       if(!elem.value){
-  //         elem.style = 'border: 5px solid red;';
-  //       } else {
-  //         elem.style.border = 'none';
-  //       }
-  //     }
-  //   }
-
-  // });
-
-
-
-
-
-
 
 }
 export default toForm;

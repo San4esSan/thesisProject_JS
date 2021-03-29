@@ -25,7 +25,6 @@ const accordeon = () => {
       event.preventDefault();
 
       let target = event.target.closest('.element');
-      console.log('target: ', target);
       if(target.classList.contains('active')){
         target.classList.remove('active');
       } else {
