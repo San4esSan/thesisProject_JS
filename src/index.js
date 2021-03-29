@@ -7,6 +7,7 @@ import topSlider from './modules/topSlider';
 import servicesCarousel from './modules/servicesCarousel';
 import toForm from './modules/toForm';
 import sendForm from './modules/sendForm';
+// import isValidator from './modules/isValidator';
   
   toggleModal();
   accordeon();
@@ -15,3 +16,4 @@ import sendForm from './modules/sendForm';
   servicesCarousel();
   toForm();
   sendForm();
+  // isValidator();

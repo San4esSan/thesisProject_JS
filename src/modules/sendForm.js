@@ -1,9 +1,11 @@
+import toggleModal from './toggleModal';
 const sendForm = () => {
   const errorMassage = 'Что то пошло не так...',
     loadMessage = 'Загрузка...',
     successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
     
   const form = document.querySelector('.form-callback');
+  
   const inputs = document.querySelectorAll('input');
   const statusMessage = document.createElement('div');
   statusMessage.style.cssText = 'font-size: 2rem;';
@@ -20,7 +22,8 @@ const sendForm = () => {
 
     const clearInputs = () => {
       inputs.forEach(item => {
-        if(inputs.classList === 'BUTTON'){
+        if(item.type !== 'submit'){
+          console.log('inputs: ', inputs);
           item.value = '';
         }
       });
@@ -38,7 +41,8 @@ const sendForm = () => {
         throw new Error('status network not 200');
       }
       statusMessage.textContent = successMessage;
-      setTimeout(() => document.querySelector('.popup').style.display = 'none', 3000);
+      setTimeout(() => document.querySelector('.modal-overlay').style.display = 'none', 3000);
+      setTimeout(() => document.querySelector('.modal-callback').style.display = 'none', 3000);
     })
     .catch((error) => {
       statusMessage.textContent = errorMassage;

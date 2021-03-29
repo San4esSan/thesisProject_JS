@@ -1,6 +1,5 @@
 const toForm = () => {
   const form = document.querySelector('.form-callback');
-  console.log('form: ', form);
 
   const toTitleCase = (str) => {
   return str
@@ -35,10 +34,10 @@ const toForm = () => {
 
   const inputRestriction = (elem) => {
     if(elem.name === 'fio'){
-      elem.value = elem.value.replace(/[^а-я\s-]/ig, '');      
+      elem.value = elem.value.replace(/[^а-я]{2,}$/ig, '');      
     }
     if(elem.name === 'tel'){
-      elem.value = elem.value.replace(/(?!^[+])[^0-9.]/, '');
+      elem.value = elem.value.replace(/(?!^[+])[^0-9.]{,13}$/, '');
     }
   };
 
@@ -66,6 +65,45 @@ const toForm = () => {
       });  
     }
   }
+
+  
+  // const validateElem = (elem) => {
+  //   if(elem.name === 'fio'){
+  //     console.log(elem);
+  //   }
+  //   if(elem.name === 'tel'){
+  //     console.log(elem);
+  //   }
+  // };
+
+  // for(let elem of form.elements) {
+  //   if(!elem.classList.contains('button')){
+  //     elem.addEventListener('blur', () => {
+  //       validateElem(elem);
+  //     });  
+  //   }
+  // }
+
+  // form.addEventListener('submit', (event) => {
+  //   event.preventDefault();
+
+  //   for(let elem of form.elements) {
+  //     if(!elem.classList.contains('button')){
+  //       if(!elem.value){
+  //         elem.style = 'border: 5px solid red;';
+  //       } else {
+  //         elem.style.border = 'none';
+  //       }
+  //     }
+  //   }
+
+  // });
+
+
+
+
+
+
 
 }
 export default toForm;
