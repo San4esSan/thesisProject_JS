@@ -1,4 +1,3 @@
-import toggleModal from './toggleModal';
 const sendForm = () => {
   const errorMassage = 'Что то пошло не так...',
     loadMessage = 'Загрузка...',
@@ -23,7 +22,6 @@ const sendForm = () => {
     const clearInputs = () => {
       inputs.forEach(item => {
         if(item.type !== 'submit'){
-          console.log('inputs: ', inputs);
           item.value = '';
         }
       });
@@ -34,7 +32,6 @@ const sendForm = () => {
       body[key] = val;
     });        
     postData(body)
-    // postData(formData)
     .then((response) => {
       event.preventDefault();
       if(response.status !==200){
@@ -43,6 +40,8 @@ const sendForm = () => {
       statusMessage.textContent = successMessage;
       setTimeout(() => document.querySelector('.modal-overlay').style.display = 'none', 3000);
       setTimeout(() => document.querySelector('.modal-callback').style.display = 'none', 3000);
+      setTimeout(() => document.querySelector('.validator-error').style.display = 'none', 3000);
+
     })
     .catch((error) => {
       statusMessage.textContent = errorMassage;
@@ -62,7 +61,6 @@ const sendForm = () => {
         'Content-Type': 'aplication/json'
       },
       body: JSON.stringify(body)
-      // body: formData
     });
   };   
 };

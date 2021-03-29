@@ -25,9 +25,11 @@ const toForm = () => {
       case 'fio':
         if(elem.value.length > 2){
           elem.value = toTitleCase(elem.value);
-          console.log('elem.value: ', elem.value.length);
           elem.value = toString(elem.value);
           elem.style.border = 'none';
+          if (elem.nextElementSibling && elem.nextElementSibling.classList.contains('validator-error')){
+            elem.nextElementSibling.remove();
+          }
         } else {
           elem.value = '';
           elem.style = 'border: 5px solid red;';
@@ -44,6 +46,9 @@ const toForm = () => {
         if(elem.value.length > 6 && elem.value.length < 14){
           elem.value = toString(elem.value);
           elem.style.border = 'none';
+          if (elem.nextElementSibling && elem.nextElementSibling.classList.contains('validator-error')){
+            elem.nextElementSibling.remove();
+          }
         } else {
           elem.value = '';
           elem.style = 'border: 5px solid red;';
