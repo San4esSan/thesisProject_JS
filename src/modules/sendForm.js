@@ -41,7 +41,7 @@ const sendForm = () => {
       setTimeout(() => document.querySelector('.modal-overlay').style.display = 'none', 3000);
       setTimeout(() => document.querySelector('.modal-callback').style.display = 'none', 3000);
       setTimeout(() => document.querySelector('.validator-error').style.display = 'none', 3000);
-
+      setTimeout(() => document.body.style.overflow = '', 3000);
     })
     .catch((error) => {
       statusMessage.textContent = errorMassage;
